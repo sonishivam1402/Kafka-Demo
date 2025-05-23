@@ -8,12 +8,38 @@ This project demonstrates a simple Kafka setup using **Node.js** where a produce
 
 [Apache Kafka](https://kafka.apache.org/) is a distributed event streaming platform used for building real-time data pipelines and streaming applications. It is horizontally scalable, fault-tolerant, and extremely fast.
 
+![image](https://github.com/user-attachments/assets/4d09945f-e2a5-442b-93d5-a26d275eeffc)
+
 Kafka consists of:
 - **Producer**: Sends messages to Kafka topics.
 - **Consumer**: Reads messages from Kafka topics.
 - **Topics**: Named channels to which producers write and from which consumers read.
 - **Partitions**: Sub-divisions of topics for scaling and load distribution.
 - **Consumer Groups**: Consumers coordinate within a group to balance partition consumption.
+
+---
+
+## What is ZooKeeper?
+Apache ZooKeeper is a centralized service for maintaining configuration information, naming, synchronization, and group services in distributed systems.
+
+### 📦 In the context of Kafka, ZooKeeper is used to:
+
+- Manage broker metadata : Keeps track of which Kafka brokers are alive. Stores cluster information like topics, partitions, and replicas.
+- Leader election : Helps elect a controller broker responsible for managing partition leaders.
+- Cluster coordination : Coordinates changes in the Kafka cluster like topic creation, broker joins/leaves, etc.
+
+### 🛠 How it works:
+
+Think of ZooKeeper as:
+- A shared config center for distributed systems.
+- A watchdog that helps Kafka know when something changes (e.g., a broker goes down).
+
+### 🔍 Simple Analogy:
+Imagine you have a classroom of students (Kafka brokers). <br/>
+ZooKeeper is like the teacher:
+- Keeps attendance (who's present).
+- Assigns roles (who is the leader).
+- Tracks what everyone is doing (which broker handles what topic/partition).
 
 ---
 
